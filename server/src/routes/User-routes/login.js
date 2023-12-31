@@ -2,7 +2,13 @@ const express = require("express");
 const router = express.Router();
 const UserModel = require("../../model/UserModel/UserModel");
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken")
+const verify = require("../../helper/verify")
 
+console.log("verify",verify())
+
+
+const SECRET_KEY="helloMyNameisSarfarazIamTheWorldBestDeveloper"
 router.post("/", async (req, res) => {
     const data = req.body;
     const { email, password } = data;
@@ -17,13 +23,29 @@ router.post("/", async (req, res) => {
 
     try {
         const userExist = await UserModel.findOne({ email });
+        console.log("userExist",userExist)
+        const userObectj ={
+            username:userExist.username,
+            name:userExist.name,
+            email:userExist.email,
+            password:userExist.password,
+            mobileNumber:userExist.mobileNumber,
+            dob:userExist.dob,
+            followers:userExist.followers,
+            following:userExist.following,
+            location:userExist.location,
+            dateOfJoining:userExist.dateOfJoining,
+            
+        }
 
         if (userExist) {
             const result = await bcrypt.compare(password, userExist.password);
-
+   
             if (result) {
                
-                return res.send("Valid user");
+              var token=  jwt.sign(userObectj,SECRET_KEY)
+               console.log("token:",token)
+                return res.send(token);
             } else {
                
                 return res.send("Invalid password");
