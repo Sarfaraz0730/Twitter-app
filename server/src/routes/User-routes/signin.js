@@ -3,7 +3,7 @@ const router = express.Router();
 const UserModel = require('../../model/UserModel/UserModel');
 const bcrypt = require('bcrypt');
 
-router.post("/signin", async (req, res) => {
+router.post("/", async (req, res) => {
     const data = req.body;
 
     if (!data.username || !data.name || !data.email || !data.password) {
