@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
 
     try {
         const userExist = await UserModel.findOne({ email });
-        console.log("userExist",userExist)
+       
         const userObectj ={
             username:userExist.username,
             name:userExist.name,
