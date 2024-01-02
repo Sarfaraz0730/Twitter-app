@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken")
 const verify = require("../../helper/verify")
 
-console.log("verify",verify())
+
 
 
 const SECRET_KEY="helloMyNameisSarfarazIamTheWorldBestDeveloper"
