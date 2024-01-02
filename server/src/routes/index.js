@@ -5,7 +5,7 @@ const profile =require("./User-routes/profile")
 const home= require("./Home-route/home")
 const editProfile= require("./User-routes/editProfile")
 const error = require("./Home-route/error")
-
+const postTweet = require("./Tweets/postTweet")
 const router = express.Router()
 
 
@@ -14,6 +14,12 @@ router.use("/login",login)
 router.use("/profile", profile)
 router.use("/",home);
 router.use("/editProfile",editProfile)
+router.use("/postTweet",postTweet)
+
+
+
+
+
 router.use("*",error)
 
 module.exports = router

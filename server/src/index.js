@@ -6,7 +6,8 @@ var cors = require('cors')
 const app = express();
 const PORT =8000;
 
-app.use(express.json())
+app.use(express.json());
+app.use(express.urlencoded({extended:false})) // for handling form data this middleware  is used
 app.use(cors())
 app.use(router)
 
