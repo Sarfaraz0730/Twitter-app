@@ -1,5 +1,6 @@
 const express = require("express");
 const multer  = require('multer')
+const path = require('path');
 const verify = require("../../helper/verify");
 const PostTweetModel = require("../../model/TweetModel/PostTweetModel");
 const UserModel = require("../../model/UserModel/UserModel");
@@ -8,7 +9,7 @@ const router = express.Router()
 
 const storage = multer.diskStorage({
     destination:function(req,file,cb){
-     return  cb(null, "../../uploads")
+      cb(null, path.join(__dirname, "uploads"));
     },
     filename:function(req,file,cb){
      return cb(null,`${Date.now()}-${file.originalname}`)
@@ -16,6 +17,7 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer({storage})
+// getting error upload folder nhi mil rha hai kal iss error ko fix krunga
 
 router.post("/",verify,upload.single("file") ,async(req,res,next)=>{
     const decoded = req.decoded;

@@ -11,8 +11,6 @@ app.use(express.urlencoded({extended:false})) // for handling form data this mid
 app.use(cors())
 app.use(router)
 
-
-
 connectDatabase()
 app.listen(PORT,()=>{
     console.log(`Server is Listening on PORT ${PORT}`)
