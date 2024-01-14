@@ -5,6 +5,7 @@ const verify = require('../../helper/verify');
 
 router.get("/", verify,(req,res,next)=>{
    const decoded = req.decoded
+   console.log("decoded from profile route : ",decoded)
    
 
     if(!decoded){

@@ -7,7 +7,8 @@ const verify = require("../../helper/verify")
 
 const SECRET_KEY = "helloMyNameisSarfarazIamTheWorldBestDeveloper";
 
-router.post("/", async (req, res) => {
+router.post("/",async (req, res) => {
+   
     const data = req.body;
     const { email, password } = data;
 
@@ -28,6 +29,7 @@ router.post("/", async (req, res) => {
             if (result) {
                 //jwt sign method was throwing an error that it require plan object that is by i had to restructure the obj
                 const userObject = {
+                    _id:userExist._id,
                     username: userExist.username,
                     name: userExist.name,
                     email: userExist.email,
@@ -39,7 +41,7 @@ router.post("/", async (req, res) => {
                     location: userExist.location,
                     dateOfJoining: userExist.dateOfJoining,
                 };
-
+               console.log("userObj : ",userObject)
                 var token = jwt.sign(userObject, SECRET_KEY);
                 console.log("token:", token);
                 return res.send(token);

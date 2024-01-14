@@ -5,7 +5,7 @@ const postTweetSchema = new mongoose.Schema({
     userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     descirption:{type:String,requred:true},
     likes:{type:Array, defualt:[]},
-    images:{type:String,required:false},
+    image:{type:String,required:false},
     hashtags:{type:String,required:false}
 
      // reTweet:{
