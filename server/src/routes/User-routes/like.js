@@ -36,7 +36,7 @@ router.post("/", verify, async (req, res, next) => {
                 return res.status(404).json({ message: "Likes array is not updated" });
             }
 
-            res.status(200).send("Post isliked");
+            res.status(200).send("Post is liked");
         } else {
 
             const userIndex = postDetails.likes.indexOf(userId);

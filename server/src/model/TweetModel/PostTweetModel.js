@@ -8,10 +8,11 @@ const postTweetSchema = new mongoose.Schema({
     image:{type:String,required:false},
     hashtags:{type:String,required:false},
 
-     reTweet:{
-        postTweetId:{type:String,required:false},
-        userId:{type: Schema.Types.ObjectId, ref: 'User',required:false} 
-    },
+    reTweets: [{
+        postTweetId: { type: String, required: false },
+        userId: { type: Schema.Types.ObjectId, ref: 'User', required: false },
+        text: { type: String, required: false }
+    }],
    
 
 })

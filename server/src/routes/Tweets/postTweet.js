@@ -24,6 +24,9 @@ router.post("/", verify, upload, async (req, res) => {
     const decoded = req.decoded;
     const tweet = {};
     const userId = decoded._id;
+    console.log("req.file", req.files)
+    const hashtags =req.body.hashtags;
+    console.log("hashtags",hashtags)
 
     if (req.body.descirption) {
         tweet.descirption = req.body.descirption;
@@ -34,6 +37,7 @@ router.post("/", verify, upload, async (req, res) => {
     }
 
     tweet.userId = userId;
+    tweet.hashtags=hashtags
 
     try {
         const tweetPosted = await PostTweetModel.create(tweet);
