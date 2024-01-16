@@ -6,6 +6,7 @@ const home= require("./Home-route/home")
 const editProfile= require("./User-routes/editProfile")
 const error = require("./Home-route/error")
 const postTweet = require("./Tweets/postTweet")
+const like = require("./User-routes/like")
 const router = express.Router()
 
 
@@ -15,6 +16,7 @@ router.use("/profile", profile)
 router.use("/",home);
 router.use("/editProfile",editProfile)
 router.use("/postTweet",postTweet)
+router.use("/like", like)
 
 
 
