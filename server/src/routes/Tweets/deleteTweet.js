@@ -15,14 +15,14 @@ router.delete("/:id", verify, async (req, res, next) => {
         if (!postDetails) {
             return res.status(404).send("postDetails not found by id,may be post already deleted")
         }
-        const tweeterId = postDetails.userId;
-        var isAuthUser = (tweeterId == userId)
-        console.log("check", isAuthUser)
-        if (isAuthUser) {
-            await PostTweetModel.findByIdAndDelete({ _id: postId })
-            return res.status(200).send("Post deleted Successfully")
-        }
-        return res.status(404).json({ message: "The user who has posted the tweet and the user who is trying to delete the post is not same, due to that you cannot delete the post" })
+        // const tweeterId = postDetails.userId;
+        // var isAuthUser = (tweeterId == userId)
+        // console.log("check", isAuthUser)
+        // if (isAuthUser) {
+        // }
+        // return res.status(404).json({ message: "The user who has posted the tweet and the user who is trying to delete the post is not same, due to that you cannot delete the post" })
+        await PostTweetModel.findByIdAndDelete({ _id: postId })
+        return res.status(200).send("Post deleted Successfully")
 
 
 

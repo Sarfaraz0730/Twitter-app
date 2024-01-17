@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/", verify, async (req, res, next) => {
     const decoded = req.decoded;
-    const userId = decoded._id;
+    const userId = new mongoose.Types.ObjectId(req.decoded._id);
     const friendId = new mongoose.Types.ObjectId(req.body.friendId);
 
     console.log("decoded", decoded)
@@ -28,7 +28,9 @@ router.post("/", verify, async (req, res, next) => {
         var isFriend = myDetailsList.following.includes(friendId)
         if (!isFriend) {
             myDetailsList.following.push(friendId);
+            friendIdDetails.followers.push(userId)
             await myDetailsList.save();
+            await friendIdDetails.save()
             return res.status(200).send(`You have started following ${friendIdDetails.name}`)
         } else {
             return res.status(200).send(`You are already following this ${friendIdDetails.name}`)

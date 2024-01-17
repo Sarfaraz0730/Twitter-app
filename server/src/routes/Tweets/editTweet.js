@@ -26,12 +26,12 @@ router.patch("/:id", verify, async (req, res, next) => {
         if (!postDetails) {
             return res.status(404).send("No tweet details found, so you cannnot edit the tweet")
         }
-        var a = postDetails.userId
-        var b = userId
-        console.log("check", a == b)
-        if (a !== b) {
-            return res.status(404).json({ message: "The user who has posted the tweet and the user who is trying to edit the post is not same, due to that you cannot edit the post" })
-        }
+        // var a = postDetails.userId
+        // var b = userId
+        // console.log("check", a == b)
+        // if (a !== b) {
+        //     return res.status(404).json({ message: "The user who has posted the tweet and the user who is trying to edit the post is not same, due to that you cannot edit the post" })
+        // }
 
         const editPost = await PostTweetModel.findOneAndUpdate({ _id: postId }, { descirption: editDescription })
         if (!editPost) {
