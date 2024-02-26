@@ -6,6 +6,7 @@ export const UserProfile = () => {
       UserProfile
       <h1>Hello user</h1>
 
+
     </div>
   )
 }
