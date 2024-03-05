@@ -5,10 +5,11 @@ const bcrypt = require('bcrypt');
 
 router.post("/", async (req, res) => {
     const data = req.body;
+    console.log("data", data)
 
-    if (!data.username || !data.name || !data.email || !data.password) {
-        return res.status(400).send("All fields are required");
-    }
+    // if (!data.username || !data.name || !data.email || !data.password) {
+    //     return res.status(400).send("All fields are required");
+    // }
 
     try {
         // Check if the user already exists
@@ -26,7 +27,7 @@ router.post("/", async (req, res) => {
             password: hashedPassword,
         });
 
-        res.status(201).send(newUser);
+        res.status(201).send({message:"Registration Successful", newUser:newUser});
     } catch (err) {
         console.error(err);
         res.status(500).send("Internal Server Error");

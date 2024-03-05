@@ -14,7 +14,7 @@ const deleteTweet = require("./Tweets/deleteTweet")
 const addFollower = require("./User-routes/addFollower")
 
 const router = express.Router()
-router.use("/signin", signin)
+router.use("/signup", signin)
 router.use("/login",login)
 router.use("/profile", profile)
 router.use("/",home);

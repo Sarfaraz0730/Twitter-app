@@ -1,0 +1,52 @@
+#container{
+border: 1px solid red;
+height: auto;
+width: 100%;
+display: flex;
+flex-direction: row;
+background-color: black;
+color: #fff;
+}
+#container>.left{
+    border: 1px solid blue;
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    padding-left: 7%;
+}
+#container>.main{
+    border: 1px solid blue;
+    height: auto;
+    width: 50%;
+}
+#container>.right{
+    border: 1px solid blue;
+    height: 100vh;
+    width: 25%;
+}
+
+.left-sidebar {
+    width: auto;
+    height: 100%;
+    background-color: black; /* Set the background color to black */
+    color: white; /* Set text color to white or any other color that suits your design */
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid red;
+  }
+  
+  .sidebar-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid red;
+
+    
+  
+    &:hover {
+      background-color: #333; /* Darken the background color on hover if needed */
+    }
+  }
+  

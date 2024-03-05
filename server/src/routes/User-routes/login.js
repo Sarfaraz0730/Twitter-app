@@ -10,6 +10,7 @@ const SECRET_KEY = "helloMyNameisSarfarazIamTheWorldBestDeveloper";
 router.post("/",async (req, res) => {
    
     const data = req.body;
+    console.log("data",data)
     const { email, password } = data;
 
     if (!email) {
@@ -44,7 +45,7 @@ router.post("/",async (req, res) => {
                console.log("userObj : ",userObject)
                 var token = jwt.sign(userObject, SECRET_KEY);
                 console.log("token:", token);
-                return res.send(token);
+                return res.send({token:token,message:"login successful"});
             } else {
                 return res.send("Invalid password");
             }
