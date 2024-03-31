@@ -1,52 +1,110 @@
-#container{
-border: 1px solid red;
-height: auto;
-width: 100%;
-display: flex;
-flex-direction: row;
-background-color: black;
-color: #fff;
+#container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  color: #fff;
 }
-#container>.left{
-    border: 1px solid blue;
-    height: 100vh;
-    width: 25%;
-    display: flex;
-    justify-content: space-around;
-    padding-left: 7%;
+
+#container > .left {
+  height: 100vh;
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  padding-left: 7%;
 }
-#container>.main{
-    border: 1px solid blue;
-    height: auto;
-    width: 50%;
+
+.main {
+  border: 1px solid blue;
+  height: auto;
+  width: 70%;
 }
-#container>.right{
-    border: 1px solid blue;
-    height: 100vh;
-    width: 25%;
+
+.right {
+  border: 1px solid blue;
+  height: 100vh;
+  width: 15%;
 }
 
 .left-sidebar {
-    width: auto;
-    height: 100%;
-    background-color: black; /* Set the background color to black */
-    color: white; /* Set text color to white or any other color that suits your design */
-    padding: 20px;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-    border: 1px solid red;
-  }
-  
-  .sidebar-item {
-    padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border: 1px solid red;
+  position: fixed;
+  width: 250px;
+  height: 95%;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid white;
 
-    
-  
-    &:hover {
-      background-color: #333; /* Darken the background color on hover if needed */
-    }
-  }
-  
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.sidebar-items {
+  margin-top: 20px;
+}
+
+.sidebar-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar-item.active {
+  background-color: #333;
+}
+
+.sidebar-item:hover {
+  background-color: #333;
+}
+
+.sidebar-item span {
+  margin-left: 10px;
+}
+
+.bottom-div {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.user-profile-pic {
+  height: 40px;
+  width: 40px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.user-details {
+  margin-left: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.username {
+  color: #aaa;
+}
+
+.logout-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #333;
+}
