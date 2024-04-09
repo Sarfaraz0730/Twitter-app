@@ -48,8 +48,8 @@ export const Login = () => {
 
   return (
     <div className="Container">
-      <div className="logo">
-        <img src={xlogo} alt="Logo" />
+      <div className="logo-icon">
+        <img src={xlogo} alt="Logo-icon" />
       </div>
       <div className="main">
         <div className="form-heading">

@@ -86,7 +86,7 @@ const Signup = () => {
 
   return (
     <div className="Container">
-      <div className="logo">
+      <div className="logo-icon ">
         <img src={xlogo} alt="Logo" />
       </div>
       <div className="main">
